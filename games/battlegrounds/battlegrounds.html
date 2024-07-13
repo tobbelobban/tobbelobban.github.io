@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Battlegrounds</title>
+    <style>
+        .wrapper {
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+        }
+          canvas {
+                border: 1px solid #000000;
+                background-color: #FFFFFF;
+                padding-left: 0;
+                padding-right: 0;
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+          }
+          p {
+              margin-left: auto;
+              margin-right: auto;
+          }
+    </style>
+    </head>
+    <body>
+        <div id="wrapper" class="wrapper">
+            <p>Rotate character with left/right arrowkeys. Use w/a/s/d to walk. Use space to fire gun.</p>
+            <canvas id="canvas" width="800" height="600"></canvas>   
+            <p id="bullets">Bullets x 5 </p>
+        </div>
+    </body>
+    <script src="battlegrounds.js"></script>
+
+    </script>
+</html>
