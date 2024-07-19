@@ -30,6 +30,11 @@ window.onload = function() {
   reset();
 };
 
+function drawRect(x,y,w,h,color) {
+  ctx.fillStyle = color;
+  ctx.fillRect(x,y,w,h);
+}
+
 function reset() {
   clearInterval(game_interval);
   tail_length = 3;
@@ -98,22 +103,39 @@ function game() {
   }
   
   // repaint entire canvas
-  ctx.fillStyle = "black";
-  ctx.fillRect(0,0,canvas.width,canvas.height);
+  drawRect( 0,
+            0,
+            canvas.width,
+            canvas.height,
+            "black"
+          );
   
   // paint snake's tail
-  ctx.fillStyle = "orange";
   for(var i = 0; i < tail.length; i++) {
-    ctx.fillRect(tail[i].x*px_len + 1,tail[i].y*px_len + 1,px_len - 1,px_len - 1);
+    drawRect( tail[i].x * px_len + 1,
+              tail[i].y * px_len + 1,
+              px_len - 1,
+              px_len - 1,
+              "orange"
+            );
   }
 
   // paint snake's head
-  ctx.fillStyle = "green";
-  ctx.fillRect(head_x*px_len + 1,head_y*px_len + 1,px_len - 1,px_len - 1);
+  drawRect( head_x*px_len + 1,
+            head_y*px_len + 1,
+            px_len - 1,
+            px_len - 1,
+            "green"
+          );
 
   // paint apple
-  ctx.fillStyle = "red";
-  ctx.fillRect(apple_x*px_len + 1,apple_y*px_len + 1,px_len - 1,px_len - 1);
+  drawRect( apple_x*px_len,
+            apple_y*px_len,
+            px_len,
+            px_len,
+            "red"
+          );
+  
   pressed = false;
   
   // update game difficulty
